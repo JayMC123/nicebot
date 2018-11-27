@@ -4,7 +4,7 @@ import time
 import asyncio
 from discord.ext import commands
 
-TOKEN = 'NTE2MDcyNTY3MDk0NjQwNjQw.DtuWhw.Lky00QEk2A_VxGFkx354I2k8J14'
+TOKEN = 'NTEwMjMyNzkyNDg0MDIwMjQ5.Dt7FpA.eTBY93_ULhR0fiQw7K4TB1b482c'
 client = commands.Bot(command_prefix = '/')
 client.remove_command('help')
 
