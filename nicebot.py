@@ -2,9 +2,7 @@ import discord
 from discord.ext import commands
 import random
 
-description = ''''This A Nice Bot Has More Commands Comming Devs Are Working On Me.
-There are a number of utility commands being showcased here.'''
-bot = commands.Bot(command_prefix='n!', description=description)
+bot = commands.Bot(command_prefix='/', description=description)
 
 @bot.event
 async def on_ready():
