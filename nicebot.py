@@ -122,5 +122,18 @@ async def clear(ctx, amount=100):
 		message.append(message)
 	await client.delete_messages(messages)
 	await bot.say('Messages deleted')
+	
+@bot.command(pass_context=True)
+async def suggest(ctx, *, msg: str):
+    user_formatted = ctx.message.author.name + "#" + ctx.message.author.discriminator
+    channel = discord.utils.get(ctx.message.server.channels, name="suggestions")
+    embed = discord.Embed(title="New Suggestion", description=msg, color=0x149900)
+    embed.set_author(name=user_formatted, icon_url=ctx.message.author.avatar_url)
+    embed_message = await bot.send_message(channel, embed=embed)
+    await bot.add_reaction(embed_message, '👍')
+    await bot.add_reaction(embed_message, '👎')
+    embed_2 = discord.Embed(title="Success", description="Your suggestion has been sent.", color=0x149900)
+    await bot.send_message(ctx.message.channel, embed=embed_2)
+    await bot.delete_message(ctx.message)
 			
 bot.run('NTE2MDcwMjkyNjI4NDM5MDYw.DtzAow.sPZxPQJcjJ8E4OMkDlfJSNySjXo')
